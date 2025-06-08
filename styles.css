@@ -6,229 +6,153 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); /* Cosmic purple-blue gradient for a sultry vibe */
-    font-family: 'Cinzel Decorative', cursive; /* Ultra-luxe, ornamental font */
-    color: #f5e6cc; /* Warm champagne for text */
+    background: linear-gradient(135deg, #1a0b2e 0%, #3c2f2f 100%); /* Deep purple to rich burgundy gradient */
+    font-family: 'Playfair Display', serif; /* Elegant, serif font for posh vibe */
+    color: #f4e8d9; /* Soft ivory for text */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-    position: relative;
-}
-
-/* Subtle Background Animation */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 10%, transparent 50%);
-    animation: pulse 10s ease-in-out infinite;
-    z-index: -1;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.2); }
 }
 
 /* Container Styling */
 .container {
-    max-width: 750px;
-    background: rgba(15, 12, 41, 0.7); /* Dark, semi-transparent for mystique */
-    backdrop-filter: blur(15px); /* Lush glassmorphism */
-    border: 2px solid rgba(245, 183, 177, 0.5); /* Rose gold border */
-    border-radius: 20px;
-    padding: 50px;
-    margin: 30px;
-    box-shadow: 0 10px 50px rgba(245, 183, 177, 0.4), inset 0 0 20px rgba(255, 215, 0, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    overflow: visible; /* Prevent text clipping */
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.05); /* Glassmorphism effect */
+    backdrop-filter: blur(10px); /* Subtle blur for sophistication */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
-    transform: translateY(-10px) scale(1.02); /* Seductive lift and slight zoom */
-    box-shadow: 0 15px 60px rgba(245, 183, 177, 0.6), inset 0 0 30px rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Headings */
 h1 {
-    color: #f5b7b1; /* Rose gold for that *wow* factor */
-    font-size: 3.2em;
-    font-weight: 900;
+    color: #d4a373; /* Luxe gold accent */
+    font-size: 2.8em;
+    font-weight: 700;
     text-align: center;
-    letter-spacing: 2px;
-    text-shadow: 0 3px 10px rgba(245, 183, 177, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
-    margin-bottom: 15px;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 3px 10px rgba(245, 183, 177, 0.5), 0 0 20px rgba(255, 215, 0, 0.3); }
-    to { text-shadow: 0 5px 15px rgba(245, 183, 177, 0.7), 0 0 30px rgba(255, 215, 0, 0.5); }
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p.lead, p.text-muted {
-    color: #f0e4d7; /* Soft ivory for contrast */
-    font-size: 1.3em;
+    color: #e0d4c3; /* Soft cream for secondary text */
+    font-size: 1.2em;
     text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Vollkorn', serif; /* Refined, elegant secondary font */
-    line-height: 1.6;
-    padding: 0 20px; /* Prevent text clipping */
+    margin-bottom: 30px;
+    font-family: 'Lora', serif; /* Elegant secondary font */
 }
 
 /* Form Styling */
 .form-group {
-    margin-bottom: 25px;
-    position: relative;
+    margin-bottom: 20px;
 }
 
 .form-control {
-    background: rgba(245, 183, 177, 0.1); /* Sheer rose gold tint */
-    border: 1px solid rgba(245, 183, 177, 0.4);
-    border-radius: 10px;
-    color: #f5e6cc;
-    font-size: 1.2em;
-    padding: 15px;
-    transition: all 0.3s ease;
-    font-family: 'Vollkorn', serif;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3); /* Gold-tinted border */
+    border-radius: 8px;
+    color: #f4e8d9;
+    font-size: 1.1em;
+    padding: 12px;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .form-control:focus {
-    background: rgba(245, 183, 177, 0.2);
-    border-color: #f5b7b1;
-    box-shadow: 0 0 15px rgba(245, 183, 177, 0.7);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #d4a373;
+    box-shadow: 0 0 10px rgba(212, 163, 115, 0.5);
     outline: none;
-    transform: scale(1.02); /* Subtle grow effect */
 }
 
 .form-control::placeholder {
-    color: #d5c4a1; /* Muted champagne */
+    color: #b0a8a1; /* Subtle placeholder color */
     font-style: italic;
-    opacity: 0.8;
-}
-
-/* Label Animation */
-.form-group label {
-    position: absolute;
-    top: -10px;
-    left: 15px;
-    background: rgba(15, 12, 41, 0.7);
-    padding: 0 10px;
-    color: #f5b7b1;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
 }
 
 /* Button Styling */
 .btn-primary {
-    background: linear-gradient(45deg, #f5b7b1, #ffdfba); /* Rose gold to peach gradient */
+    background: linear-gradient(45deg, #d4a373, #b8860b); /* Gold gradient */
     border: none;
-    border-radius: 12px;
-    padding: 15px 30px;
-    font-size: 1.3em;
-    font-family: 'Cinzel Decorative', cursive;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: #0f0c29; /* Deep contrast */
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn-primary:hover::before {
-    left: 100%;
+    color: #1a0b2e; /* Dark contrast for text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(245, 183, 177, 0.8);
+    transform: scale(1.05); /* Slight scale-up for charm */
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.6);
+    background: linear-gradient(45deg, #b8860b, #d4a373);
 }
 
 .btn-primary:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* Subtle press effect */
 }
 
 /* Result Section */
 #result {
-    font-size: 1.6em;
-    color: #ffdfba; /* Peachy glow */
-    font-weight: 700;
+    font-size: 1.4em;
+    color: #d4a373;
+    font-weight: 600;
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(245, 183, 177, 0.1);
-    box-shadow: 0 5px 20px rgba(245, 183, 177, 0.3);
+    margin-top: 20px;
     opacity: 0;
-    animation: slideIn 0.6s ease forwards;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 #result.text-danger {
-    color: #ff6b81; /* Sultry red for errors */
+    color: #ff6b6b; /* Vibrant red for errors */
 }
 
-/* Slide-in Animation for Result */
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(20px); }
+/* Animation for Result */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* Custom Select Dropdown Arrow */
-select.form-control {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f5b7b1'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 14px;
 }
 
 /* Responsive Design */
 @media (max-width: 576px) {
     .container {
-        padding: 30px;
-        margin: 15px;
+        padding: 20px;
+        margin: 10px;
     }
 
     h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .btn-primary {
-        font-size: 1.1em;
-        padding: 12px 25px;
+        font-size: 1em;
+        padding: 10px 20px;
     }
 
     .form-control {
         font-size: 1em;
-        padding: 12px;
-    }
-
-    p.lead, p.text-muted {
-        font-size: 1.1em;
-        padding: 0 15px;
+        padding: 10px;
     }
 }
 
-/* Ensure Text Visibility */
-.form-group, #result, h1, p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+/* Custom Select Dropdown Arrow */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4a373'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
 }
