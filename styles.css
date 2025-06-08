@@ -1,44 +1,158 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f8f1eb;
-    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a0b2e 0%, #3c2f2f 100%); /* Deep purple to rich burgundy gradient */
+    font-family: 'Playfair Display', serif; /* Elegant, serif font for posh vibe */
+    color: #f4e8d9; /* Soft ivory for text */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
 }
 
-h1 {
-    color: #4a2c2a;
-    font-weight: bold;
-}
-
-.btn-primary {
-    background-color: #d4a373;
-    border-color: #d4a373;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #b8860b;
-    border-color: #b8860b;
-}
-
+/* Container Styling */
 .container {
-    max-width: 600px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.05); /* Glassmorphism effect */
+    backdrop-filter: blur(10px); /* Subtle blur for sophistication */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+h1 {
+    color: #d4a373; /* Luxe gold accent */
+    font-size: 2.8em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p.lead, p.text-muted {
+    color: #e0d4c3; /* Soft cream for secondary text */
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Lora', serif; /* Elegant secondary font */
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
 }
 
 .form-control {
-    border-radius: 5px;
-    border: 1px solid #d4a373;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 163, 115, 0.3); /* Gold-tinted border */
+    border-radius: 8px;
+    color: #f4e8d9;
+    font-size: 1.1em;
+    padding: 12px;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .form-control:focus {
-    border-color: #b8860b;
-    box-shadow: 0 0 5px rgba(184, 134, 11, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #d4a373;
+    box-shadow: 0 0 10px rgba(212, 163, 115, 0.5);
+    outline: none;
 }
 
-#result {
+.form-control::placeholder {
+    color: #b0a8a1; /* Subtle placeholder color */
+    font-style: italic;
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(45deg, #d4a373, #b8860b); /* Gold gradient */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
     font-size: 1.2em;
-    color: #4a2c2a;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1a0b2e; /* Dark contrast for text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05); /* Slight scale-up for charm */
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.6);
+    background: linear-gradient(45deg, #b8860b, #d4a373);
+}
+
+.btn-primary:active {
+    transform: scale(0.95); /* Subtle press effect */
+}
+
+/* Result Section */
+#result {
+    font-size: 1.4em;
+    color: #d4a373;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+#result.text-danger {
+    color: #ff6b6b; /* Vibrant red for errors */
+}
+
+/* Animation for Result */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .btn-primary {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .form-control {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+/* Custom Select Dropdown Arrow */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4a373'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
 }
